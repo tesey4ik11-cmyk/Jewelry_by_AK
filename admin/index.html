@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Панель управления — Jewelry by AK</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/logo-ak.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ══════════════ ШАПКА ══════════════ -->
+<header class="topbar">
+  <div class="topbar-brand">
+    <span class="brand-mark">AK</span>
+    <span class="brand-text">
+      <b>Панель управления</b>
+      <i>Jewelry by AK</i>
+    </span>
+  </div>
+
+  <div class="topbar-status" id="connStatus" data-state="off">
+    <span class="dot"></span>
+    <span id="connText">Сохранение не настроено</span>
+  </div>
+
+  <div class="topbar-actions">
+    <a class="btn btn-ghost" href="../index.html" target="_blank" rel="noopener">
+      Открыть сайт
+    </a>
+    <button class="btn btn-solid" id="saveAll" type="button" disabled>
+      Сохранить изменения
+    </button>
+    <button class="icon-topbar" id="switchMode" type="button" title="Сменить способ сохранения" aria-label="Сменить способ сохранения">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h11"/><path d="m11 3 4 4-4 4"/><path d="M20 17H9"/><path d="m13 21-4-4 4-4"/></svg>
+    </button>
+    <button class="icon-topbar" id="disconnect" type="button" title="Отключить сохранение" aria-label="Отключить сохранение" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-3"/><path d="M10 12H3"/><path d="m7 8-4 4 4 4"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- ══════════════ МЕНЮ ПАНЕЛИ ══════════════ -->
+  <aside class="sidebar">
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" type="button" data-tab="products">
+        <span class="tab-ico">◆</span> Украшения <span class="tab-count" id="countProducts"></span>
+      </button>
+      <button class="tab" type="button" data-tab="categories">
+        <span class="tab-ico">◆</span> Категории <span class="tab-count" id="countCategories"></span>
+      </button>
+      <button class="tab" type="button" data-tab="contacts">
+        <span class="tab-ico">◆</span> Контакты <span class="tab-count" id="countContacts"></span>
+      </button>
+      <button class="tab" type="button" data-tab="brand">
+        <span class="tab-ico">◆</span> О бренде и доставка
+      </button>
+      <button class="tab" type="button" data-tab="rental">
+        <span class="tab-ico">◆</span> Аренда
+      </button>
+      <button class="tab" type="button" data-tab="hero">
+        <span class="tab-ico">◆</span> Главный экран
+      </button>
+      <button class="tab" type="button" data-tab="backup">
+        <span class="tab-ico">◆</span> Резервные копии
+      </button>
+      <button class="tab" type="button" data-tab="help">
+        <span class="tab-ico">◆</span> Справка
+      </button>
+    </nav>
+
+    <div class="sidebar-note">
+      <b>Как это работает</b>
+      <p>Вы правите украшения и тексты здесь, нажимаете «Сохранить» — панель записывает
+         файлы прямо в папку проекта. Ничего копировать вручную не нужно.</p>
+    </div>
+  </aside>
+
+  <!-- ══════════════ СОДЕРЖИМОЕ ══════════════ -->
+  <main class="content" id="content">
+    <!-- Украшения -->
+    <section class="panel is-active" data-panel="products">
+      <header class="panel-head">
+        <div>
+          <h1>Украшения</h1>
+          <p>Здесь живёт весь каталог: фото, названия, цены, описания и статусы.</p>
+        </div>
+        <button class="btn btn-solid" type="button" id="addProduct">+ Добавить украшение</button>
+      </header>
+      <div class="panel-body split">
+        <div class="list-col">
+          <input class="input search" type="search" id="productSearch" placeholder="Поиск по названию…">
+          <ul class="item-list" id="productList"></ul>
+        </div>
+        <div class="form-col" id="productForm"></div>
+      </div>
+    </section>
+
+    <!-- Категории -->
+    <section class="panel" data-panel="categories">
+      <header class="panel-head">
+        <div>
+          <h1>Категории</h1>
+          <p>Это фильтры в каталоге: «Колье», «Серьги» и так далее.</p>
+        </div>
+        <button class="btn btn-solid" type="button" id="addCategory">+ Добавить категорию</button>
+      </header>
+      <div class="panel-body" id="categoryEditor"></div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="panel" data-panel="contacts">
+      <header class="panel-head">
+        <div>
+          <h1>Контакты</h1>
+          <p>Кнопки «Написать» на сайте ведут по этим ссылкам. Главный мессенджер — тот,
+             у которого включён переключатель «Основной»: он становится плавающей кнопкой.</p>
+        </div>
+        <button class="btn btn-solid" type="button" id="addContact">+ Добавить контакт</button>
+      </header>
+      <div class="panel-body" id="contactEditor"></div>
+    </section>
+
+    <!-- Бренд -->
+    <section class="panel" data-panel="brand">
+      <header class="panel-head">
+        <div>
+          <h1>О бренде и доставка</h1>
+          <p>Название, подпись, валюта, город и часы ответа. Эти данные подставляются
+             в шапку, подвал и в текст заявок.</p>
+        </div>
+      </header>
+      <div class="panel-body narrow" id="brandEditor"></div>
+    </section>
+
+    <!-- Аренда -->
+    <section class="panel" data-panel="rental">
+      <header class="panel-head">
+        <div>
+          <h1>Аренда</h1>
+          <p>Условия, которые видны в блоке «Аренда украшений» и в карточке арендного колье.</p>
+        </div>
+      </header>
+      <div class="panel-body narrow" id="rentalEditor"></div>
+    </section>
+
+    <!-- Главный экран -->
+    <section class="panel" data-panel="hero">
+      <header class="panel-head">
+        <div>
+          <h1>Главный экран</h1>
+          <p>Большой заголовок, текст приветствия и цифры под кнопками.</p>
+        </div>
+      </header>
+      <div class="panel-body narrow" id="heroEditor"></div>
+    </section>
+
+    <!-- Резервные копии -->
+    <section class="panel" data-panel="backup">
+      <header class="panel-head">
+        <div>
+          <h1>Резервные копии</h1>
+          <p>Сохраните копию настроек перед большими правками — и сможете вернуться
+             к ней одной кнопкой.</p>
+        </div>
+      </header>
+      <div class="panel-body narrow" id="backupEditor"></div>
+    </section>
+
+    <!-- Справка -->
+    <section class="panel" data-panel="help">
+      <header class="panel-head">
+        <div><h1>Справка</h1><p>Коротко о том, как всё устроено.</p></div>
+      </header>
+      <div class="panel-body narrow" id="helpEditor"></div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════════ ПОДТВЕРЖДЕНИЕ ══════════════ -->
+<div class="modal" id="confirmModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <h3 id="confirmTitle">Подтвердите действие</h3>
+    <p id="confirmText"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" type="button" data-close>Отмена</button>
+      <button class="btn btn-danger" type="button" id="confirmOk">Удалить</button>
+    </div>
+  </div>
+</div>
+
+<!-- Настройка сохранения: GitHub (для сайта в интернете) или папка на компьютере -->
+<div class="modal" id="connectModal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-panel wide" role="dialog" aria-modal="true" aria-labelledby="connectTitle">
+    <h3 id="connectTitle">Как панель будет сохранять правки</h3>
+
+    <div class="connect-tabs">
+      <button class="connect-tab is-active" type="button" data-mode="github">Сайт в интернете (GitHub)</button>
+      <button class="connect-tab" type="button" data-mode="folder">Папка на компьютере</button>
+    </div>
+
+    <!-- ── Режим GitHub ── -->
+    <div class="connect-pane" data-mode="github">
+      <p>
+        Правки будут уходить <b>коммитом в ваш репозиторий GitHub</b>, а хостинг
+        (GitHub Pages или Vercel) сам пересоберёт сайт за 30–60 секунд.
+        Ничего устанавливать не нужно.
+      </p>
+
+      <div class="steps-mini">
+        <div class="step-mini">
+          <span class="step-mini-num">1</span>
+          <div>
+            <b>Создайте токен GitHub</b>
+            <p>Откройте страницу создания токена, поставьте галочку <code>repo</code> (или
+               <code>Contents: Read and write</code> у fine-grained), нажмите
+               «Generate token» и скопируйте его.</p>
+            <button class="btn btn-ghost btn-sm" type="button" id="createToken">Открыть страницу создания токена</button>
+          </div>
+        </div>
+        <div class="step-mini">
+          <span class="step-mini-num">2</span>
+          <div>
+            <b>Вставьте токен и адрес репозитория</b>
+            <p>Адрес — это «логин/название-репозитория», например
+               <code>anzhela/jewelry-by-ak</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="repoUrlBox">Репозиторий GitHub</label>
+        <input class="input" id="repoUrlBox" type="text" placeholder="логин/название-репозитория" autocomplete="off" spellcheck="false">
+        <div class="hint">Например: <code>anzhela/jewelry-by-ak</code> — можно вставить и полную ссылку.</div>
+      </div>
+
+      <div class="field">
+        <label for="tokenBox">Токен GitHub</label>
+        <div class="input-row">
+          <input class="input" id="tokenBox" type="password" placeholder="ghp_… или github_pat_…" autocomplete="off" spellcheck="false">
+          <button class="btn btn-ghost" type="button" id="toggleToken">Показать</button>
+        </div>
+        <div class="hint">
+          Токен хранится только в этом браузере и отправляется только на github.com.
+          Никому его не передавайте — он даёт доступ к вашему репозиторию.
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="branchBox">Ветка (необязательно)</label>
+        <input class="input" id="branchBox" type="text" placeholder="main" autocomplete="off" spellcheck="false">
+        <div class="hint">Оставьте пустым — панель сама определит основную ветку.</div>
+      </div>
+
+      <p class="connect-error" id="githubError"></p>
+    </div>
+
+    <!-- ── Режим папки ── -->
+    <div class="connect-pane" data-mode="folder" hidden>
+      <p>
+        Подходит, если сайт пока лежит на этом компьютере. Выберите папку <b>AK</b> —
+        ту, в которой находятся <code>index.html</code> и папка <code>admin</code>.
+        Браузер спросит разрешение на чтение и запись: это стандартная защита.
+      </p>
+      <p class="muted">
+        Работает в Google Chrome и Microsoft Edge. Если панель открыта в другом браузере,
+        используйте режим GitHub.
+      </p>
+      <p class="connect-error" id="folderError"></p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-ghost" type="button" id="connectLater">Позже</button>
+      <button class="btn btn-ghost" type="button" id="connectFolder" hidden>Выбрать папку</button>
+      <button class="btn btn-solid" type="button" id="connectGithub">Подключить</button>
+    </div>  </div>
+</div>
+
+<!-- Предупреждение о неподдерживаемом браузере -->
+<div class="modal" id="unsupportedModal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-panel wide" role="dialog" aria-modal="true">
+    <h3>Нужен браузер Chrome или Edge</h3>
+    <p>
+      Панель сохраняет файлы прямо на диск — эту возможность поддерживают
+      Google Chrome и Microsoft Edge. В других браузерах правки можно будет
+      только выгрузить файлом и заменить его вручную.
+    </p>
+    <p class="muted" id="unsupportedHint"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" type="button" data-close>Понятно</button>
+      <button class="btn btn-solid" type="button" id="downloadInstead">Выгрузить файл настроек</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toasts"></div>
+
+<!-- Текущие настройки сайта: подключаем штатный файл, чтобы не дублировать данные -->
+<script src="../js/shop.config.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/github.js"></script>
+<script src="js/store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

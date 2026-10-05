@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jewelry by AK — авторские украшения ручной работы | Анжела</title>
+<meta name="description" content="Авторские украшения ручной работы: колье, серьги и подвески из жемчуга Майорка и натуральных камней. Покупка и аренда эффектных украшений для фотосессий и мероприятий.">
+<meta name="author" content="Анжела, Jewelry by AK">
+<meta name="theme-color" content="#14110E">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Open Graph / соцсети -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Jewelry by AK">
+<meta property="og:title" content="Jewelry by AK — украшения, в которых живёт душа">
+<meta property="og:description" content="Каждая бусинка, каждый камень, каждая линия — способ выразить эмоции. Авторские украшения ручной работы и аренда эффектных колье.">
+<meta property="og:image" content="assets/img/portrait-lg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/logo-ak.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo-ak.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Jewelry by AK",
+  "description": "Авторские украшения ручной работы: колье, серьги, подвески из жемчуга Майорка и натуральных камней. Покупка и аренда.",
+  "image": "assets/img/portrait-lg.jpg",
+  "priceRange": "1800–3400 ₽",
+  "currenciesAccepted": "RUB",
+  "founder": { "@type": "Person", "name": "Анжела" }
+}
+</script>
+</head>
+
+<body data-hero-placeholder="">
+<a class="skip-link" href="#catalog">Перейти к каталогу</a>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="Jewelry by AK — на главную">
+      <span class="brand-mark" aria-hidden="true">AK</span>
+      <span class="brand-text">
+        <span class="brand-name">Jewelry <em>by</em> AK</span>
+        <span class="brand-tag">украшения ручной работы</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <button class="icon-btn saved-btn" id="savedBtn" type="button" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.6c0 5.1-7.5 9.7-7.5 9.7Z"/></svg>
+        <span class="saved-count" id="savedCount" hidden>0</span>
+      </button>
+      <a class="btn btn-ghost header-cta" href="#catalog">Смотреть каталог</a>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Меню лежит рядом с шапкой и позиционируется от окна (position: fixed).
+     Внутри шапки его нельзя держать: backdrop-filter шапки создаёт и контекст
+     наложения, и containing block — из-за этого и absolute, и fixed потомки
+     привязывались к самой шапке, обрезались ею и уезжали при прокрутке. -->
+<div class="nav-backdrop" id="navBackdrop" hidden></div>
+<nav class="nav" id="primaryNav" aria-label="Основная навигация">
+  <button class="nav-close" id="navClose" type="button" aria-label="Закрыть меню">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <a href="#about">О бренде</a>
+  <a href="#catalog">Каталог</a>
+  <a href="#rental">Аренда</a>
+  <a href="#process">Как заказать</a>
+  <a href="#contact">Контакты</a>
+  <a class="nav-cta" href="#catalog">Смотреть каталог</a>
+</nav>
+
+<main id="top">
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="shell hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span>Авторские украшения · ручная работа</p>
+        <h1 id="heroTitle">
+          Украшения,<br>
+          в которых живёт <em>душа</em>
+        </h1>
+        <p class="hero-lead">
+          Меня зовут Анжела. Каждая бусинка, каждый камень, каждая линия — для меня не просто
+          материал, а возможность выразить эмоции и создать что-то уникальное, наполненное смыслом.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#catalog">Выбрать украшение</a>
+          <a class="btn btn-outline" href="#rental">Взять в аренду</a>
+        </div>
+        <ul class="hero-facts" aria-label="Ключевые особенности">
+          <li><b>100%</b><span>ручная сборка</span></li>
+          <li><b>1 из 1</b><span>каждое изделие</span></li>
+          <li><b>от 1 800 ₽</b><span>и аренда</span></li>
+        </ul>
+      </div>
+
+      <figure class="hero-media reveal" data-delay="1">
+        <picture>
+          <source type="image/webp" srcset="assets/img/portrait-sm.webp 640w, assets/img/portrait-lg.webp 1120w" sizes="(max-width: 900px) 92vw, 46vw">
+          <img src="assets/img/portrait-sm.jpg" alt="Анжела, основатель Jewelry by AK, в белой рубашке с авторским колье ручной работы" width="640" height="800" fetchpriority="high" decoding="async">
+        </picture>
+        <figcaption class="hero-card">
+          <span class="hero-card-label">Хит сезона</span>
+          <span class="hero-card-title">Колье «Рыбка на удачу»</span>
+          <span class="hero-card-price">2 900 ₽</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Жемчуг Майорка</span><span aria-hidden="true">◆</span>
+        <span>Натуральный жемчуг</span><span aria-hidden="true">◆</span>
+        <span>Кварц и натуральные камни</span><span aria-hidden="true">◆</span>
+        <span>Позолота</span><span aria-hidden="true">◆</span>
+        <span>Ручная сборка</span><span aria-hidden="true">◆</span>
+        <span>Жемчуг Майорка</span><span aria-hidden="true">◆</span>
+        <span>Натуральный жемчуг</span><span aria-hidden="true">◆</span>
+        <span>Кварц и натуральные камни</span><span aria-hidden="true">◆</span>
+        <span>Позолота</span><span aria-hidden="true">◆</span>
+        <span>Ручная сборка</span><span aria-hidden="true">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section class="section about" id="about" aria-labelledby="aboutTitle">
+    <div class="shell about-grid">
+      <div class="about-media reveal">
+        <picture>
+          <source type="image/webp" srcset="assets/img/pearl-necklace-sm.webp 692w, assets/img/pearl-necklace-lg.webp 1211w" sizes="(max-width: 900px) 92vw, 42vw">
+          <img src="assets/img/pearl-necklace-sm.jpg" alt="Колье ручной работы из жемчуга Майорка на песке в тёплом свете" width="692" height="800" loading="lazy" decoding="async">
+        </picture>
+        <span class="about-badge">
+          <b>С любовью</b>
+          <span>и вдохновением</span>
+        </span>
+      </div>
+
+      <div class="about-copy reveal" data-delay="1">
+        <p class="eyebrow"><span class="eyebrow-line"></span>О бренде</p>
+        <h2 id="aboutTitle">Маленькая частичка моей души — в каждом украшении</h2>
+        <p>
+          Мои украшения — это отражение моего видения красоты и современных трендов.
+          Я собираю их вручную: подбираю жемчуг по оттенку и блеску, ищу камни с характером
+          и выстраиваю линии так, чтобы украшение работало на вас, а не наоборот.
+        </p>
+        <p>
+          Поэтому повторов почти не бывает — каждое изделие существует в единственном экземпляре.
+          А ещё я знаю, как обидно покупать эффектную вещь «на один выход»: для этого у меня есть
+          небольшая коллекция колье, которую можно взять в аренду.
+        </p>
+
+        <ul class="values">
+          <li>
+            <span class="value-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3.5 14.6 9l6 .7-4.5 4 1.3 5.9L12 16.7 6.6 19.6 7.9 13.7 3.4 9.7l6-.7L12 3.5Z"/></svg>
+            </span>
+            <div><b>Своя эстетика</b><span>Никакого ширпотреба — только отобранные материалы и чистые линии.</span></div>
+          </li>
+          <li>
+            <span class="value-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.6c0 5.1-7.5 9.7-7.5 9.7Z"/></svg>
+            </span>
+            <div><b>Сделано с любовью</b><span>Каждое украшение собирается вручную, без спешки и конвейера.</span></div>
+          </li>
+          <li>
+            <span class="value-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 9.5 12 4l8 5.5V20H4V9.5Z"/><path d="M9.5 20v-5.5h5V20"/></svg>
+            </span>
+            <div><b>Аренда для выхода</b><span>Роскошные колье на фотосессию, свадьбу или мероприятие.</span></div>
+          </li>
+        </ul>
+
+        <a class="link-arrow" href="#catalog">Посмотреть украшения <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CATALOG ══════════════ -->
+  <section class="section catalog" id="catalog" aria-labelledby="catalogTitle">
+    <div class="shell">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span>Каталог</p>
+        <h2 id="catalogTitle">Украшения, которые хочется носить</h2>
+        <p class="section-sub">
+          Небольшая, тщательно подобранная коллекция. Нажмите на украшение, чтобы рассмотреть
+          детали, состав и стоимость.
+        </p>
+      </header>
+
+      <div class="filters reveal" id="filters" role="group" aria-label="Фильтр по категориям"></div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>В этой категории пока пусто — скоро добавим новинки.</p>
+
+      <aside class="bundle-note reveal">
+        <div>
+          <b>Хотите комплект?</b>
+          <span>Подберу украшения под ваш образ и оттенок — напишите, и я предложу 2–3 варианта.</span>
+        </div>
+        <a class="btn btn-outline" href="#contact">Подобрать комплект</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ══════════════ RENTAL ══════════════ -->
+  <section class="section rental" id="rental" aria-labelledby="rentalTitle">
+    <div class="rental-bg" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="assets/img/cross-olive-sm.webp 600w, assets/img/cross-olive-lg.webp 1050w" sizes="100vw">
+        <img src="assets/img/cross-olive-sm.jpg" alt="" width="600" height="800" loading="lazy" decoding="async">
+      </picture>
+    </div>
+
+    <div class="shell rental-inner">
+      <div class="rental-copy reveal">
+        <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span>Аренда украшений</p>
+        <h2 id="rentalTitle">Нужен эффект на один вечер? Возьмите, а не покупайте</h2>
+        <p>
+          Хотите эффектное украшение на фотосессию или мероприятие, но не хочется покупать,
+          чтобы потом оно лежало в шкатулке? Тогда вы по адресу 🥰
+        </p>
+        <p>
+          Я создала небольшую коллекцию роскошных колье, с которыми ваш образ будет неотразим.
+          Достаточно выбрать дату — остальное я возьму на себя.
+        </p>
+        <div class="rental-cta">
+          <a class="btn btn-gold" href="#contact" data-intent="Аренда: хочу узнать свободные даты">Узнать свободные даты</a>
+          <a class="btn btn-outline-light" href="#catalog">Что можно взять</a>
+        </div>
+      </div>
+
+      <ol class="rental-steps reveal" data-delay="1">
+        <li><span class="step-num">01</span><div><b>Выбираете украшение</b><span>Из коллекции для аренды — и дату выхода.</span></div></li>
+        <li><span class="step-num">02</span><div><b>Подтверждаем бронь</b><span>Договоримся о залоге и способе передачи.</span></div></li>
+        <li><span class="step-num">03</span><div><b>Забираете и сияете</b><span>Украшение приедет чистым, в подарочной упаковке.</span></div></li>
+        <li><span class="step-num">04</span><div><b>Возвращаете</b><span>В течение 1–2 дней после мероприятия.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════════ PROCESS ══════════════ -->
+  <section class="section process" id="process" aria-labelledby="processTitle">
+    <div class="shell">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span>Как заказать</p>
+        <h2 id="processTitle">От сообщения до вашей шкатулки</h2>
+      </header>
+
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <span class="process-num">01</span>
+          <h3>Пишете мне</h3>
+          <p>Присылаете фото украшения, которое приглянулось, или описываете идею — цвет, повод, образ.</p>
+        </article>
+        <article class="process-card reveal" data-delay="1">
+          <span class="process-num">02</span>
+          <h3>Уточняем детали</h3>
+          <p>Подтверждаю наличие, помогаю с размером и длиной. Оплата — переводом или по ссылке.</p>
+        </article>
+        <article class="process-card reveal" data-delay="2">
+          <span class="process-num">03</span>
+          <h3>Бережно упаковываю</h3>
+          <p>Украшение едет в подарочной упаковке. Отправка по России, возможен самовывоз.</p>
+        </article>
+        <article class="process-card reveal" data-delay="3">
+          <span class="process-num">04</span>
+          <h3>Вы носите и сияете</h3>
+          <p>Подскажу, с чем сочетать, и как ухаживать, чтобы жемчуг и позолота радовали долго.</p>
+        </article>
+      </div>
+
+      <div class="care reveal">
+        <div class="care-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-9.7A4.3 4.3 0 0 1 12 8.2a4.3 4.3 0 0 1 7.5 2.6c0 5.1-7.5 9.7-7.5 9.7Z"/></svg>
+        </div>
+        <div>
+          <b>Уход за украшениями</b>
+          <p>Жемчуг Майорка и натуральный жемчуг любят мягкую ткань и «надеваются последними, снимаются первыми»: парфюм, лак и вода — не лучшие друзья покрытия. Храните изделия отдельно, в сухой шкатулке.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section class="section contact" id="contact" aria-labelledby="contactTitle">
+    <div class="shell contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span>Контакты</p>
+        <h2 id="contactTitle">Напишите — и красота начнётся</h2>
+        <p>
+          Выберите удобный мессенджер: я быстро отвечу, подскажу наличие и помогу выбрать
+          украшение под ваш образ.
+        </p>
+
+        <ul class="contact-list" id="contactList"></ul>
+
+        <p class="contact-note">
+          Отвечаю ежедневно с 10:00 до 21:00. Увидели украшение в Instagram — просто пришлите
+          скриншот, я найду его в наличии.
+        </p>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" data-delay="1" novalidate>
+        <h3>Оставить заявку</h3>
+        <p class="form-hint">Заполните — и я свяжусь с вами сама.</p>
+
+        <div class="field">
+          <label for="fName">Как вас зовут<span aria-hidden="true">*</span></label>
+          <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Анна">
+          <small class="field-error" data-for="fName"></small>
+        </div>
+
+        <div class="field">
+          <label for="fContact">Телефон, Telegram или e-mail<span aria-hidden="true">*</span></label>
+          <input id="fContact" name="contact" type="text" autocomplete="tel" required placeholder="+7 900 000-00-00 или @nickname">
+          <small class="field-error" data-for="fContact"></small>
+        </div>
+
+        <div class="field">
+          <label for="fInterest">Что интересует</label>
+          <select id="fInterest" name="interest">
+            <option>Купить украшение</option>
+            <option>Аренда на мероприятие</option>
+            <option>Украшение под заказ</option>
+            <option>Комплект в подарок</option>
+            <option>Другое</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fMessage">Сообщение</label>
+          <textarea id="fMessage" name="message" rows="3" placeholder="Например: интересует колье с крестом из оливкового жемчуга, когда будет в наличии?"></textarea>
+        </div>
+
+        <button class="btn btn-solid btn-full" type="submit">Отправить заявку</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+        <p class="form-legal">
+          Отправляя заявку, вы соглашаетесь на обработку персональных данных.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">AK</span>
+      <div>
+        <span class="brand-name">Jewelry <em>by</em> AK</span>
+        <p>Авторские украшения ручной работы. Создано с любовью и вдохновением ❤️</p>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Навигация в подвале">
+      <a href="#about">О бренде</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#rental">Аренда</a>
+      <a href="#process">Как заказать</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <div class="footer-social" id="footerSocial"></div>
+  </div>
+  <div class="shell footer-bottom">
+    <span>© <span id="year">2026</span> Jewelry by AK. Все права защищены.</span>
+    <span>Фотографии и изделия — авторские.</span>
+  </div>
+</footer>
+
+<!-- ══════════════ FLOATING ACTIONS ══════════════ -->
+<div class="float-actions">
+  <button class="to-top" id="toTop" type="button" aria-label="Наверх" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/></svg>
+  </button>
+  <a class="float-wa" id="floatWa" href="#" target="_blank" rel="noopener" aria-label="Написать в мессенджер">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.6a8.4 8.4 0 0 1-12.4 7.5L4 20.4l1.4-4.4A8.4 8.4 0 1 1 21 11.6Z"/><path d="M8.8 8.4c0 3.4 2.8 6.2 6.2 6.2.5 0 1.4-.6 1.4-1.3 0-.3-1.6-1.2-1.9-1.2-.4 0-.7.7-1 .7-.6 0-2.4-1.8-2.4-2.4 0-.3.7-.6.7-1 0-.3-.9-1.9-1.2-1.9-.7 0-1.8.4-1.8.9Z"/></svg>
+    <span>Написать</span>
+  </a>
+</div>
+
+<!-- ══════════════ PRODUCT MODAL ══════════════ -->
+<div class="modal" id="productModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="saved-backdrop" id="savedBackdrop" hidden></div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/shop.config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
